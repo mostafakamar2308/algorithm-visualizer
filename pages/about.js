@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="">
       <Head>
-        <title>About Page</title>
+        <title>About Creator</title>
       </Head>
       <section className="flex flex-col items-center p-5">
         <Image
@@ -45,6 +45,7 @@ const About = () => {
                 href="https://github.com/mostafakamar2308"
                 target={"_blank"}
                 rel="noreferrer"
+                className="hover:shadow-3xl hover:shadow-sky-400  rounded-full w-fit h-fit  transition-all duration-200"
               >
                 <Image
                   alt="github"
@@ -56,6 +57,7 @@ const About = () => {
               <a
                 href="https://www.linkedin.com/in/mostafa-kamar/"
                 target={"_blank"}
+                className="hover:shadow-3xl hover:shadow-sky-400 rounded-full w-fit h-fit transition-all duration-200"
                 rel="noreferrer"
               >
                 <Image
