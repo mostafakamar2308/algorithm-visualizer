@@ -15,7 +15,7 @@ const AlgorithmCard = (props) => {
       }
       className="w-3/12 border border-white p-2 rounded-md m-2 hover:bg-white hover:text-black transition-all duration-200"
     >
-      <Link href={"/" + props.AlgorithmName}>
+      <Link href={"/" + props.AlgorithmName.split(" ").join("-")}>
         <a className=" font-semibold">{props.AlgorithmName}</a>
       </Link>
     </div>
