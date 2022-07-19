@@ -13,7 +13,7 @@ const AlgorithmCard = (props) => {
           document.querySelector(`#${props.AlgorithmName.split(" ").join("-")}`)
         )
       }
-      className="w-3/12 border border-white p-2 rounded-md m-2 hover:bg-white hover:text-black transition-all duration-200"
+      className="w-3/12 border border-white p-2 rounded-md m-2 cursor-pointer hover:bg-white hover:text-black transition-all duration-200"
     >
       <Link href={"/" + props.AlgorithmName.split(" ").join("-")}>
         <a className=" font-semibold">{props.AlgorithmName}</a>

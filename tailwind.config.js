@@ -11,6 +11,7 @@ module.exports = {
         "mx-auto": "0px auto",
       },
     },
+    color: {},
   },
   plugins: [],
 };

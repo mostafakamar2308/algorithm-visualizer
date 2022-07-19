@@ -2,8 +2,8 @@ import Image from "next/dist/client/image";
 import Link from "next/link";
 const Header = () => {
   return (
-    <header className="bg-indigo-700 text-white flex justify-between p-3 items-center">
-      <h1 className="logo text-3xl ">
+    <header className=" bg-slate-700 text-white flex justify-between p-3 items-center">
+      <h1 className="logo text-3xl font-bold">
         <Link href={"/"}>
           <a>Easy Algorithms</a>
         </Link>
