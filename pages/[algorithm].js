@@ -29,7 +29,7 @@ export const getStaticProps = (context) => {
 };
 
 import dataStructure from "../algorithmsCode/Binary Search Data";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Describe from "../components/DescripeAlgorithm";
 import binarySearch from "../algorithmsCode/Binary Search";
 import Logger from "../components/Logger";
@@ -48,7 +48,6 @@ const Algorithm = ({ algorithm }) => {
       console[verb] = (function (method, verb, log) {
         return function (text) {
           method(text);
-          // handle distinguishing between methods any way you'd like
           var msg = document.createElement("p");
           msg.classList.add(verb);
           msg.textContent = text;
@@ -57,6 +56,7 @@ const Algorithm = ({ algorithm }) => {
       })(console[verb].bind(console), verb, log);
     });
   }, []);
+  const [searching, setSearching] = useState(false);
   return (
     <section className="grid grid-cols-2 grid-rows-2 max-h-screen min-h-screen">
       <Head>
@@ -70,7 +70,7 @@ const Algorithm = ({ algorithm }) => {
         onClick={() => {
           binarySearch(dataStructure, ele);
         }}
-        className="absolute right-8 bottom-2  h-20  w-20 font-bold bg-blue-500 rounded-full hover:bg-blue-600 "
+        className="fixed right-8 bottom-2  h-20  w-20 font-bold bg-blue-500 rounded-full hover:bg-blue-600 "
       >
         Start
       </button>

@@ -1,25 +1,33 @@
-function binarySearch(arr, ele, start = 0, end = arr.length - 1) {
-  if (ele > arr[end] || ele < arr[start]) {
-    console.log("not In the array");
-    return "not found";
+let timer;
+function binarySearch(arr, ele, start = 0, end = arr.length) {
+  // If the item does not exist, return not found
+  if (end < start) return "not found";
+
+  // Calculate middle index of the array
+  let middle = Math.floor((start + end) / 2);
+  console.log(`searching for ${ele} at index ${middle}`);
+
+  // Is the middle a match?
+  if (arr[middle] === ele) {
+    console.log(`found ${ele} at index ${middle}`);
+    console.log(`-------------------------------------------------`);
+    return middle;
   }
-  let mid = Math.round((end + start) / 2);
-  console.log(`Searching at index ${mid}`);
-  console.log(`Found ${arr[mid]}`);
-  if (start > end) {
-    console.log("not In the array");
-    return "not found";
+  // Is the middle less than x
+  if (arr[middle] < ele) {
+    console.log(`Didn't find ${ele} at index ${middle}`);
+    timer = setTimeout(() => {
+      console.log(`searching the right half`);
+      binarySearch(arr, ele, middle + 1, end);
+    }, 1000);
   }
-  if (ele === arr[mid]) {
-    console.log(`found ${ele} at position ${mid}`);
-    console.log(`---------------------`);
-    return `found ${ele} at position ${mid}`;
-  } else if (ele > arr[mid]) {
-    console.log(`searching the right half`);
-    binarySearch(arr, ele, mid + 1, arr.length - 1);
-  } else {
-    console.log(`searching the left half`);
-    binarySearch(arr, ele, 0, mid - 1);
+  // Else the middle is more than x
+  else {
+    timer = setTimeout(() => {
+      console.log(`Didn't find ${ele} at index ${middle}`);
+      console.log(`searching the left half`);
+      binarySearch(arr, ele, start, middle - 1);
+    }, 1000);
   }
 }
 

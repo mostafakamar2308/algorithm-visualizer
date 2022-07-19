@@ -5,7 +5,7 @@ const VisualRepresentationSection = (props) => {
     <div className="border-r-2 flex justify-center items-center">
       <div className="flex">
         {props.dataStructure.map((ele) => (
-          <ArrayItem itemValue={ele} key={ele.toString()} />
+          <ArrayItem itemValue={ele} isMid={true} key={ele.toString()} />
         ))}
       </div>
     </div>

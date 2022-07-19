@@ -1,6 +1,6 @@
 const Describe = () => {
   return (
-    <div className="border-t-2">
+    <div className="border-t-2 p-2">
       <h1>Algorithm Description</h1>
     </div>
   );
